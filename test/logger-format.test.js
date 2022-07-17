@@ -14,7 +14,7 @@ test('create new logger with transport (format)', () => {
   });
 
   const logger = winston.createLogger({
-    level: 'silly',
+    level: 'silly', // mau menampilkan dari mana ke mana, contoh set info maka akan menampilkan dari level log info ke atas sampai ke level error
     // format: format.json(),
     // format: format.logstash(),
     /* 
