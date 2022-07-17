@@ -1,0 +1,27 @@
+{
+  "name": "learn-nodejs-logging",
+  "version": "1.0.0",
+  "description": "Learning unit test",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest" :{
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "verbose": true
+  },
+  "author": "Yadi Apriyadi",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "3.8.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.6",
+    "babel-jest": "^28.1.2",
+    "jest": "^28.1.2"
+  },
+  "repository": "https://github.com/YadBro/learn-nodejs-logging.git"
+}
