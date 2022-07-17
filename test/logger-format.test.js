@@ -34,7 +34,10 @@ test('create new logger with transport (format)', () => {
       myFormat
     ), //custom format with combine
     transports: [
-      new winston.transports.Console({})
+      new winston.transports.Console({}),
+      new winston.transports.File({
+        filename: 'application.log'
+      })
     ]
   });
 
