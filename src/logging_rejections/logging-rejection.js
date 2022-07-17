@@ -5,9 +5,11 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.File({
       handleRejections: true,
-      filename: './src/logging_exceptions/exception.log'
+      filename: './src/logging_rejections/rejections.log'
     }),
   ]
 });
+
+
 
 hello();
