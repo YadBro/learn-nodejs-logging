@@ -2,10 +2,15 @@ import winston, {format} from "winston";
 
 test('create new logger with transport (format)', () => { 
 
-  const {printf, combine, label, timestamp, colorize} = format;
+  const {printf,
+    combine,
+    label,
+    timestamp,
+    colorize,
+    ms} = format;
 
-  const myFormat = printf(({level, message, label, timestamp}) => {
-    return `${timestamp}, [${label}] ${level}: ${message}`;
+  const myFormat = printf(({level, message, label, timestamp, ms}) => {
+    return `${timestamp}, [${label}] ${level}: ${message} (${ms})`;
   });
 
   const logger = winston.createLogger({
@@ -25,6 +30,7 @@ test('create new logger with transport (format)', () => {
       label({label: 'UwU Logging'}),
       timestamp(),
       colorize(),
+      ms(),
       myFormat
     ), //custom format with combine
     transports: [
